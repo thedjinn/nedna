@@ -1,0 +1,7 @@
+nedna - node.js streaming mp3 server
+
+Written by Emil Loer <http://koffietijd.net>
+
+A project inspired by Edna, the python based mp3 server. Edna was rather
+buggy, slow and lacked a lot of functionality. Therefore a rewrite was in 
+order.

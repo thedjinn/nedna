@@ -1,0 +1,6 @@
+[submodule "lib/Mu"]
+	path = lib/Mu
+	url = http://github.com/raycmorgan/Mu.git
+[submodule "lib/node-inotify"]
+	path = lib/node-inotify
+	url = http://github.com/c4milo/node-inotify.git

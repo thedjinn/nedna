@@ -5,3 +5,14 @@ Written by Emil Loer <http://koffietijd.net>
 A project inspired by Edna, the python based mp3 server. Edna was rather
 buggy, slow and lacked a lot of functionality. Therefore a rewrite was in 
 order.
+
+Installation:
+ - git clone git@github.com:thedjinn/nedna.git
+ - git submodule init
+ - git submodule update
+ - npm install inotify@0.1.3 (or 0.1.4 if you can get it to install correctly)
+
+Running:
+ - edit the file nedna.js and change the music directory paths
+ - node nedna.js
+ - go to http://localhost:8192/ and enjoy

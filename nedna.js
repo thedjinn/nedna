@@ -3,12 +3,12 @@ var url = require('url');
 var sys = require('sys');
 var fs = require('fs');
 var path = require('path');
-var walk = require('walk');
+var walk = require('./walk');
 var http = require('http');
-var Inotify = require('lib/node-inotify/inotify').Inotify;
-var Mu = require('lib/Mu');
-var streamer = require("streamer");
-var mime = require('content-type');
+var Inotify = require('inotify').Inotify;
+var Mu = require('./lib/Mu');
+var streamer = require("./streamer");
+var mime = require('./content-type');
 
 Mu.templateRoot="./templates";
 

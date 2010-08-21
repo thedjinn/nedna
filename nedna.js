@@ -12,14 +12,14 @@ var mime = require('./content-type');
 
 Mu.templateRoot="./templates";
 
-// please make sure the basenames are unique
-var paths=["/home/djinn/Music"];
-
 var inotify = new Inotify(); //persistent by default, new Inotify(false) //no persistent
 
 var items=[];
 var tree=[];
 var dirs=[];
+
+var settings=fs.readFileSync("settings.json");
+settings=JSON.parse(settings);
 
 var callback = function(event) {
     var mask = event.mask;
@@ -109,7 +109,7 @@ function sorttree(node) {
 
 function readtree() {
 	dirs=[];
-	paths.forEach(function(root) {
+	settings.paths.forEach(function(root) {
 		var urlroot="/"+path.basename(root);
 		var rootname=path.basename(root);
 		dirs.push({path:root,type:"dir",fullpath:root,url:"/"+rootname+"/",inotify:addwatch(root)});
@@ -284,5 +284,5 @@ http.createServer(function (request, response) {
 		indexpage(request,response,uri);
 	}
 
-}).listen(8192);
+}).listen(settings.port);
 console.log('Http server started');

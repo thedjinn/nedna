@@ -92,7 +92,7 @@ exports.serve_static_file=function(path, req, resp) {
 		send_headers(200, {
 			'Content-Length':stats.size, 
 			'Content-Type':mime.mime_type(file),
-//			'Last-Modified':stats.mtime
+			'Last-Modified':stats.mtime
 		});
 		sys.pump(readStream, resp, function() {
 			sys.puts('pumped '+file);

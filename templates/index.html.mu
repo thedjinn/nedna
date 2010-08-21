@@ -16,10 +16,10 @@
 		<section class="c12 clearfix">
 			<ul class="g10">
 			{{# dirs }}
-				<li><a href="{{ url }}allrecursive.m3u">allrecursive</a> - <a href="{{ url }}">{{ name }}</a> - {{ type }}</li>
+				<li><img src="/_/assets/icons/folder.png"/><a href="{{ url }}allrecursive.m3u">allrecursive</a> - <a href="{{ url }}">{{ name }}</a> - {{ type }}</li>
 			{{/ dirs }}
 			{{# files }}
-				<li><a href="{{ url }}">{{ name }}</a> - {{ mimecat }}</li>
+				<li><img src="/_/assets/icons/music.png"/><a href="{{ url }}">{{ name }}</a> - {{ mimecat }}</li>
 			{{/ files }}
 			</ul>
 			<aside class="g2">

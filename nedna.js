@@ -96,6 +96,17 @@ function addfile(path,fullpath,url,list,isdir) {
 	}
 }
 
+function sorttree(node) {
+	node.sort(function(a,b){
+		return (b.name<a.name)-(a.name<b.name);
+	});
+	for (var i=0;i<node.length;++i) {
+		if ("children" in node[i]) {
+			sorttree(node[i].children);
+		}
+	}
+}
+
 function readtree() {
 	dirs=[];
 	paths.forEach(function(root) {
@@ -118,6 +129,7 @@ function readtree() {
 		},function(err){
 			if (err) throw err;
 //			console.log("done");
+			sorttree(tree);
 			sys.puts(sys.inspect(dirs));
 			sys.puts(sys.inspect(tree));
 			sys.puts(dumptree({name:"root",type:"dir",children:tree},0));
